@@ -1,1 +1,1 @@
-# maven-publish-template
+# Webstaurant Store Test Automation Project

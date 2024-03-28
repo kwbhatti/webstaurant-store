@@ -1,5 +1,11 @@
 package com.webstaurantstore.core;
 
+/**
+ * Execution Environment
+ * 
+ * @author kbhatti
+ *
+ */
 public enum Env {
 
 	DEV ("Development", "dev.properties"),

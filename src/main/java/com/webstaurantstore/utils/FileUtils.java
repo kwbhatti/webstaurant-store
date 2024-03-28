@@ -5,6 +5,11 @@ import java.io.IOException;
 
 import com.google.common.io.Files;
 
+/**
+ * Utility to manage Files
+ * @author kbhatti
+ *
+ */
 public class FileUtils {
 	
 	public static File createDir(File directory) {

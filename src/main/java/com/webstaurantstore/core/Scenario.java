@@ -5,6 +5,12 @@ import org.openqa.selenium.WebDriver;
 import com.aventstack.extentreports.ExtentTest;
 import com.chimpcentral.logger.Log;
 
+/**
+ * Holds basic information about any given test
+ * 
+ * @author kbhatti
+ *
+ */
 public class Scenario {
 
 	String name = null;

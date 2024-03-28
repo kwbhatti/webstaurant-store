@@ -1,47 +1,46 @@
 package com.webstaurantstore.ui;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import com.webstaurantstore.ui.Page.Condition;
-
-public abstract class Element<T> {
-
+/**
+ * Represents any Element
+ * 
+ * @author kbhatti
+ *
+ * @param <P> {@link Page} the element is on
+ */
+public abstract class Element<P> {
 	
-	protected Page<?> page = null;
-	public By locator = null;
+	protected Page<P> page = null;
+	protected String xpath = null;
+	protected WebElement element = null;
 	
-	public Element(Page<?> page, By locator, Condition... conditions) {
+	/**
+	 * 
+	 * @param page {@link Page} element is on
+	 */
+	public Element(Page<P> page) {
 		this.page = page;
-		this.locator = locator;
 	}
 	
-	public abstract T getElement();
-	
-	public WebElement findElement(By locator, Condition... conditions) {
-		return page.findElement(locator, conditions);
+	/**
+	 * 
+	 * @param page {@link Page} element is on
+	 * @param xpath {@link String} xpath of the element
+	 */
+	public Element(Page<P> page, String xpath) {
+		this(page);
+		this.xpath = xpath;
 	}
-	
-	public T waitUntil(Condition... conditions) {
-		page.waitUntil(locator, conditions);
-		return getElement();
+
+	/**
+	 * 
+	 * @param page {@link Page} element is on
+	 * @param element {@link WebElement} 
+	 */
+	public Element(Page<P> page, WebElement element) {
+		this(page);
+		this.element = element;
 	}
-	
-	public void click(Condition... conditions) {
-		page.click(locator, conditions);
-	}
-	
-	public void sendKeys(String keysToSend, Condition... conditions) {
-		page.sendKeys(locator, keysToSend, conditions);
-	}
-	
-	public String getAttribute(String name, Condition... conditions) {
-		return page.getAttribute(locator, name, conditions);
-	}
-	
-	public String getText(Condition... conditions) {
-		return page.getText(locator, conditions);
-	}
-	
 	
 }

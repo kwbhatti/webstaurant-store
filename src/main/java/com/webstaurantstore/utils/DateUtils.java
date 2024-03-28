@@ -3,6 +3,12 @@ package com.webstaurantstore.utils;
 import java.util.Calendar;
 import java.util.Date;
 
+/**
+ * Utility for Date, Time, Calendar
+ * 
+ * @author kbhatti
+ *
+ */
 public class DateUtils {
 
 	public static long getCurrentUnixTimeStamp() {

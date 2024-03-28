@@ -1,43 +1,44 @@
 package com.webstaurantstore.app.ui.elements;
 
-import java.util.List;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.Point;
-import org.openqa.selenium.Rectangle;
-import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 
 import com.webstaurantstore.ui.Element;
 import com.webstaurantstore.ui.Page;
-import com.webstaurantstore.ui.Page.Condition;
 
-public class ProductBoxContainer extends Element<ProductBoxContainer> {
+/**
+ * Represents a single product box container after searching for products
+ * 
+ * @author kbhatti
+ *
+ * @param <P> {@link Page} where the product box is displayed
+ */
+public class ProductBoxContainer<P> extends Element<P> {
 
-	static String xpath = "//*[contains(@class , 'product-box-container')]";
-	By itemDescriptionSpan = null;
-	By addToCartButton = null;
+	By itemDescriptionSpan = By.xpath(".//*[@data-testid = 'itemDescription']");
+	By addToCartButton = By.xpath(".//*[@data-testid = 'itemAddCart']");
 	
-	public ProductBoxContainer(Page<?> page) {
-		super(page, By.xpath(xpath));
-		this.itemDescriptionSpan = By.xpath(xpath + "//*[@data-testid = 'itemDescription']");
-		this.addToCartButton = By.xpath(xpath + "//*[@data-testid = 'itemAddCart']");
-	}
-
-	@Override
-	public ProductBoxContainer getElement() {
-		return this;
+	/**
+	 * 
+	 * @param page {@link Page} where the product box is displayed
+	 * @param element {@link WebElement} representation of product box
+	 */
+	public ProductBoxContainer(Page<P> page, WebElement element) {
+		super(page, element);
 	}
 	
+	/**
+	 * @return Returns the item description of the product box
+	 */
 	public String getItemDescription() {
-		return findElement(itemDescriptionSpan, Condition.PRESENT).getText();
+		return element.findElement(itemDescriptionSpan).getText();
 	}
 	
+	/**
+	 * Clicks 'Add to Cart' button for the product
+	 */
 	public void addToCart() {
-		findElement(addToCartButton, Condition.PRESENT).click();
+		element.findElement(addToCartButton).click();
 	}
 
-	
 }

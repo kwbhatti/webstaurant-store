@@ -5,6 +5,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+/**
+ * Manages properties for the project in properties files
+ * 
+ * @author kbhatti
+ *
+ */
 public class ProjectProperties {
 
 	private Properties properties = new Properties();

@@ -5,6 +5,12 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.markuputils.Markup;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
+/**
+ * Manages Extent Report
+ * 
+ * @author kbhatti
+ *
+ */
 public class Report {
 		
 	protected Report() {}

@@ -2,6 +2,12 @@ package com.webstaurantstore.utils;
 
 import java.nio.file.FileSystems;
 
+/**
+ * Utility to manage file paths
+ * 
+ * @author kbhatti
+ *
+ */
 public class FilePaths {
 
 	private FilePaths() {}

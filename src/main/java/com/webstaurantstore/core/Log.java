@@ -3,6 +3,12 @@ package com.webstaurantstore.core;
 import com.chimpcentral.logger.Logger;
 import com.chimpcentral.logger.LoggerOptions;
 
+/**
+ * Manages logging to Chimp Central logger
+ * 
+ * @author kbhatti
+ *
+ */
 public class Log {
 
 	Log() {}

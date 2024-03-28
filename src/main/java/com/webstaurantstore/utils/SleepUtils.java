@@ -2,6 +2,12 @@ package com.webstaurantstore.utils;
 
 import java.time.Duration;
 
+/**
+ * Utility for sleep
+ * 
+ * @author kbhatti
+ *
+ */
 public class SleepUtils {
 
 	private SleepUtils() {}
@@ -14,7 +20,4 @@ public class SleepUtils {
 		}
 	}
 
-	public static int getRatio(Duration sleep, Duration timeout) {
-		return (int) (timeout.toMillis() / sleep.toMillis());
-	}
 }

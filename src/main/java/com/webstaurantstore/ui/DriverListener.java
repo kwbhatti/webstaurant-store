@@ -8,6 +8,12 @@ import com.webstaurantstore.core.Log;
 
 import java.lang.reflect.Method;
 
+/**
+ * Helps log information to the log file
+ * 
+ * @author kbhatti
+ *
+ */
 public class DriverListener implements WebDriverListener {
 
 	private void logStep(String step) {
@@ -55,5 +61,4 @@ public class DriverListener implements WebDriverListener {
 		logStep("navigate to: " + url);
 	}
 
-	
 }

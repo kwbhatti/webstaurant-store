@@ -3,6 +3,13 @@ package com.webstaurantstore.core;
 import com.chimpcentral.logger.LoggerOptions;
 import com.webstaurantstore.utils.FilePaths;
 
+/**
+ * Constants used throughout the project
+ * All values must be static
+ * 
+ * @author kbhatti
+ *
+ */
 public class Constants {
 
 	private Constants() {}

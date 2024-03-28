@@ -3,7 +3,7 @@
 <suite name="Test Suite" verbose="1" thread-count="1" >
   	<test name="Test" >
 	    <classes>
-	      	<class name="com.chimpcentral.DeleteMeTest"/>
+	      	<class name="com.webstaurantstore.suite"/>
 	    </classes>
   	</test>
 </suite>

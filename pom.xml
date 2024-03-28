@@ -13,6 +13,10 @@
 		<testng.version>6.14.3</testng.version>
 		<compiler.plugin.version>3.13.0</compiler.plugin.version>
 		<surefire.plugin.version>3.2.5</surefire.plugin.version>
+		<selenium.version>4.18.1</selenium.version>
+		<webdrivermanager.version>RELEASE</webdrivermanager.version>
+		<extent.report.version>3.1.5</extent.report.version>
+		<chimp.central.logger.version>2.5.1</chimp.central.logger.version>
 	</properties>
 
 	<developers>
@@ -27,6 +31,26 @@
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>${testng.version}</version>
+		</dependency>
+		<dependency>
+    		<groupId>io.github.bonigarcia</groupId>
+		    <artifactId>webdrivermanager</artifactId>
+		    <version>${webdrivermanager.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.seleniumhq.selenium</groupId>
+		    <artifactId>selenium-java</artifactId>
+		    <version>${selenium.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>${extent.report.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.chimp-central</groupId>
+			<artifactId>logger</artifactId>
+			<version>${chimp.central.logger.version}</version>
 		</dependency>
 	</dependencies>
 	

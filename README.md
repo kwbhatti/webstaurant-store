@@ -2,6 +2,10 @@
 
 Automation project for Webstaurant Store
 
+## Installation Requirements
+
+- Java 17 or above
+- Maven 3.6 or above 
 
 ## Execution
 

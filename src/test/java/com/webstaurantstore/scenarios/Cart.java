@@ -11,6 +11,7 @@ import com.webstaurantstore.app.ui.elements.ProductBoxContainer;
 import com.webstaurantstore.app.ui.elements.TableNavigation;
 import com.webstaurantstore.app.ui.pages.CartPage;
 import com.webstaurantstore.app.ui.pages.SearchResultsPage;
+import com.webstaurantstore.core.Report;
 import com.webstaurantstore.core.Suite;
 import com.webstaurantstore.ui.Page;
 
@@ -41,19 +42,24 @@ public class Cart extends Suite {
 	@Test
 	private void search() throws IOException {
 		SoftAssert softAssert = new SoftAssert();
+		Report.info("Opening Webstaurant Store UI and searching for product");
 		SearchResultsPage searchResultsPage = new WebstaurantStoreUI().openLandingPage().searchProduct("stainless work table");
 		Page.logScreenshot();
 		TableNavigation<SearchResultsPage> tableNavigation = searchResultsPage.getTableNavigation();
 		List<ProductBoxContainer<SearchResultsPage>> productBoxContainers = null;
+		Report.info("Checking if all results on each page has the word table in description");
 		while (tableNavigation.isNextButtonVisible()) {
 			productBoxContainers = searchResultsPage.getProductBoxContainers();
 			productBoxContainers.forEach(e -> softAssert.assertTrue(e.getItemDescription().contains("Table")));
 			tableNavigation.clickLastButton();
 		}
+		Report.info("Adding the last product on the last page to cart");
 		searchResultsPage.getProductBoxContainer(productBoxContainers.size() -1).addToCart();
 		searchResultsPage.getNotification().close();
 		Page.logScreenshot();
+		Report.info("Opening Cart Page");
 		CartPage cartPage = searchResultsPage.clickCartButton();
+		Report.info("Emptying cart");
 		cartPage.emptyCart();
 		Page.logScreenshot();
 		softAssert.assertAll();
